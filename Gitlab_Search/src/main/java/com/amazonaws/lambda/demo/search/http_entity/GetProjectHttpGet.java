@@ -5,11 +5,11 @@ import java.io.UnsupportedEncodingException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 
-public class GetSignInPageHttpPost extends HttpGet{
-	static private final String url = "https://gitlab.com/users/sign_in";
+public class GetProjectHttpGet extends HttpGet{
+	static private final String url = "https://gitlab.com";
 	
-	public GetSignInPageHttpPost() throws UnsupportedEncodingException {
-		super(GetSignInPageHttpPost.url);
+	public GetProjectHttpGet(String projectUri) throws UnsupportedEncodingException {
+		super(GetProjectHttpGet.url + "/" + projectUri);
         
 		/** set form data **/
 //        List<NameValuePair> params = new ArrayList<NameValuePair>();

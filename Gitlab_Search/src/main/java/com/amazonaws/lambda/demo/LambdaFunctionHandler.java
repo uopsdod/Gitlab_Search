@@ -26,7 +26,7 @@ public class LambdaFunctionHandler implements RequestHandler<Object, String> {
     	SearchUtil.getLogger().log(Level.INFO, "input DailyRewardInput: " + ReflectionToStringBuilder.toString(input));
     	SearchUtil.getLogger().log(Level.INFO, "input Context: " + ReflectionToStringBuilder.toString(context));
     	
-    	execute("autologin");
+    	execute("AutoLogin");
 		
 		SearchUtil.getLogger().log(Level.INFO, "Lambda function ends");
 		

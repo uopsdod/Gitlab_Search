@@ -1,6 +1,7 @@
 package com.amazonaws.lambda.demo.search.http_entity;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -11,15 +12,23 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 
-public class GetAllProjectsHttpPost extends HttpGet{
-	static private final String url = "https://gitlab.com/dashboard/projects";
+public class GetSearchResultHttpGet extends HttpGet{
+	static private final String url = "https://gitlab.com/search";
 	
-	public GetAllProjectsHttpPost() throws UnsupportedEncodingException {
-		super(GetAllProjectsHttpPost.url);
-        
+	public GetSearchResultHttpGet(String projectId, String keyword) throws UnsupportedEncodingException, URISyntaxException {
+		super(new URIBuilder(GetSearchResultHttpGet.url)
+				.setParameter("utf8", "✓") // %E2%9C%93
+				.setParameter("project_id", projectId)
+				.setParameter("search", keyword)
+				.build()
+				);
+		
+//		super("https://gitlab.com/search?utf8=%E2%9C%93&snippets=&scope=&search=AutoLogin&project_id=8380941");
+
 		/** set form data **/
 //        List<NameValuePair> params = new ArrayList<NameValuePair>();
 //        this.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));

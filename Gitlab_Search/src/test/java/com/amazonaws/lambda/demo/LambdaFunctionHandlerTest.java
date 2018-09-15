@@ -50,7 +50,8 @@ public class LambdaFunctionHandlerTest {
     public void testLambdaFunctionHandler() {
         LambdaFunctionHandler handler = new LambdaFunctionHandler();
         Context ctx = createContext();
-        String keyword = System.getProperty("keyword");
+        String keyword = "AutoLogin";
+//        String keyword = System.getProperty("keyword");
 //        String accessKeyId = System.getProperty("aws.accessKeyId");
 //        String accessSecretKey = System.getProperty("aws.accessSecretKey");
 //        String region = System.getProperty("aws.region");
