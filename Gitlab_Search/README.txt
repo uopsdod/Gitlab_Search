@@ -1,4 +1,3 @@
-
 ### Resources overall: 
 
 Project_Git_Url
@@ -8,14 +7,10 @@ Lambda
 		Policy: AWSLambdaBasicExecutionRole
 		Policy: [aws_policy_ssm.txt]
 
-CloudWatch_Schedule_Rule
+### Invoking Flow: 
+Gatway API -> Lambda(Parameter Store + CloudWatch log) 
 
-CloudWatch_Log 
-
-Parameter_Store
-
-
-
-### Bisiness Flow: 
-CloudWatch Rule -> Lambda(Parameter Store + CloudWatch log) 
-
+### TODO: 
+* use Jersey to create a simple Restful API for client
+* upload to lambda and test 
+* use Gateway API + lambda to make it serverless 
