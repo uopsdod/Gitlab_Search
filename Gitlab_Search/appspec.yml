@@ -10,9 +10,3 @@ hooks:
   AfterInstall:
     - location: XXX.sh
       timeout: 180
-  ApplicationStart:
-    - location: XXX.sh
-      timeout: 3600
-  ValidateService:
-    - location: XXX.sh
-      timeout: 3600
