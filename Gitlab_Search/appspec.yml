@@ -1,0 +1,18 @@
+version: 0.0
+os: windows
+files:
+  - source: README.txt
+    destination: c:\temp
+hooks:
+  BeforeInstall:
+    - location: XXX.sh
+    - location: XXX.sh
+  AfterInstall:
+    - location: XXX.sh
+      timeout: 180
+  ApplicationStart:
+    - location: XXX.sh
+      timeout: 3600
+  ValidateService:
+    - location: XXX.sh
+      timeout: 3600
